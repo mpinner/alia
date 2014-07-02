@@ -1,31 +1,38 @@
 /* Alia: sharing accountability and bringing back human connection 
  (2nd place winner of #ExtremeWearables designathon)
- Author: matt pinner @mpinner (and team)
+ Author: matt pinner @mpinner 
+ (and team: Ella Jeong, M Asynaps, Jon Hsiung, Mary Kim, Divya Gaitnode)
  
  Intent: connect exactly two people with wearable devices via xbees.
  
  Terms:
- fuelGauge: shows the sensors readings of the other person's device 
- emote : recieve a message to the other
- nudge : send a message to the other
- sense : read and send local sensors
- update : send sensor reading
+ * fuelGauge: shows the sensors readings of the other person's device 
+ * emote : recieve a message to the other
+ * nudge : send a message to the other
+ * sense : read and send local sensors
+ * update : send sensor reading
  
  PINS:
- 0/1 : tx/rx for Serial over XBee 
- 2   : nudge button (INPUT_PULLUP)
- 4/5 : adxl345 accelerometer (i2c)
- 6   : neopixel x8 stick (ws2811)
- 13  : vibration motor and onboard led (high/low modulated for power savings)
+ * 0/1 : tx/rx for Serial over XBee 
+ * 2   : nudge button (INPUT_PULLUP)
+ * 4/5 : adxl345 accelerometer (i2c)
+ * 6   : neopixel x8 stick (ws2811)
+ * 13  : vibration motor and onboard led (high/low modulated for power savings)
  
  BOM: https://www.sparkfun.com/wish_lists/90529
- fio: http://arduino.cc/en/Main/ArduinoBoardFio
- xbee: https://www.sparkfun.com/datasheets/Wireless/Zigbee/XBee-Datasheet.pdf
- battery: https://www.sparkfun.com/datasheets/Batteries/UnionBattery-1000mAh.pdf 
- button:https://www.sparkfun.com/datasheets/Components/General/00097.jpg
- accelerometer: https://www.sparkfun.com/datasheets/Sensors/Accelerometer/ADXL345.pdf
- leds: https://dlnmh9ip6v2uc.cloudfront.net/datasheets/Components/LED/adafruit-neopixel-uberguide.pdf
- vibrator: https://www.sparkfun.com/datasheets/Robotics/310-101_datasheet.pdf
+ * fio: http://arduino.cc/en/Main/ArduinoBoardFio
+ * xbee: https://www.sparkfun.com/datasheets/Wireless/Zigbee/XBee-Datasheet.pdf
+ * battery: https://www.sparkfun.com/datasheets/Batteries/UnionBattery-1000mAh.pdf 
+ * button:https://www.sparkfun.com/datasheets/Components/General/00097.jpg
+ * accelerometer: https://www.sparkfun.com/datasheets/Sensors/Accelerometer/ADXL345.pdf
+ * leds: https://dlnmh9ip6v2uc.cloudfront.net/datasheets/Components/LED/adafruit-neopixel-uberguide.pdf
+ * vibrator: https://www.sparkfun.com/datasheets/Robotics/310-101_datasheet.pdf
+ 
+ PARTS MODELS:
+ * fio : https://github.com/sparkfun/3D_Models/tree/master/Products/Prototyping/Arduino%20Fio%20DEV-10116
+ * xbee: https://github.com/sparkfun/3D_Models/blob/master/Products/Wireless/XBee%202mW%20PCB%20Antenna%20-%20Series%202%20WRL-11217.skp
+ * battery: https://github.com/sparkfun/3D_Models/tree/master/Products/Prototyping/Polymer%20Lithium%20Ion%20Battery%20-%201000mAh%20PRT-00339
+ * leds : https://github.com/adafruit/NeoPixel-Sticks | http://www.thingiverse.com/thing:371636
  
  */
 
@@ -229,7 +236,7 @@ void update() {
 
   if (DEBUG) Serial.println("fuel:" + fuelLevel);
 
-// set all pixels
+  // set all pixels
   for(int i=0; i< 16; i++) {
     strip.setPixelColor(i, 0, 0, 0);
 
@@ -304,6 +311,7 @@ void off (){
   return;
 
 }
+
 
 
 
